@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;}
 
 body {
     font-family: Arial, sans-serif;
@@ -9,7 +9,17 @@ body {
     background: url('assets/img/portal.jpg') no-repeat fixed;
     background-size: 100% 100%;
     
-    
+    color: rgb(15, 179, 203);
+    text-shadow: -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0), 1px 1px 0 rgb(0, 0, 0),
+     -2px -2px 0 rgb(134, 199, 131), 2px -2px 0 rgb(134, 199, 131), -2px 2px 0 rgb(134, 199, 131), 2px 2px 0 rgb(134, 199, 131);
+  }
+
+  table {
+    th, td {
+      color: rgb(15, 179, 203);
+    text-shadow: -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0), 1px 1px 0 rgb(0, 0, 0),
+     -2px -2px 0 rgb(134, 199, 131), 2px -2px 0 rgb(134, 199, 131), -2px 2px 0 rgb(134, 199, 131), 2px 2px 0 rgb(134, 199, 131);
+    }
   }
   
   .container {

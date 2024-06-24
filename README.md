@@ -6,22 +6,14 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Сайт имеет две страницы
+## На домашней (первой) странице представлен список персонажей в табличном виде. Использован бесконечный скролл ngx-infinite-scroll
+## При нажатии имении открывается страница персонажа (вторая) с более подробной информацией о нем
+## Использован bootstrap
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Angular 18 версия, TS, SCSS, RxJs, HTTP, разработан в VSCode
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Есть сортировка по имени (по возр, по убыв, по умолчанию (красный цвет)) по нажатию стрелочки рядом с Name
+## Фильтрация по полу в виде чекбоксов
+## Поиск по имени через поле input type='text'
+## Использован GraphQL. Можно пока что только добавлять своих персонажей через кнопку Create, исписав 4 поля о нем. Чтобы найти их, надо поискать по имени через поле поиска

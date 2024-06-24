@@ -3,13 +3,15 @@ import { ActivatedRoute } from '@angular/router';
 import { RickandmortyService } from '../../services/rickandmorty.service';
 import { response } from 'express';
 import { NgIf, NgFor } from '@angular/common';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-character',
   standalone: true,
   imports: [
     NgIf,
-    NgFor
+    NgFor,
+    CommonModule
   ],
   templateUrl: './character.component.html',
   styleUrl: './character.component.scss'

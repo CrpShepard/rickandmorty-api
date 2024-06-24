@@ -2,10 +2,17 @@
     <h1>Rick and Morty</h1>
 </div>
 
-<input type="text" placeholder="Enter character's name"/>
-<button (click)="loadAllCharacters()">Load all characters</button>
+<input type="text" placeholder="Enter character's name" [(ngModel)]="searchTerm" (input)="onSearch()"/>
+<div>
+  <label>New custom character:</label>
+  <input type="text" placeholder="Name" [(ngModel)]="newCharacter.name"/>
+  <input type="text" placeholder="Gender" [(ngModel)]="newCharacter.gender"/>
+  <input type="text" placeholder="Status" [(ngModel)]="newCharacter.status"/>
+  <input type="text" placeholder="Species" [(ngModel)]="newCharacter.species"/>
+  <button (click)="addCharacter()">Create</button>
+</div>
 
-<table mat-table [dataSource]="characters" class="mat-elevation-z8">
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
     <ng-container matColumnDef="avatar">
       <th mat-header-cell *matHeaderCellDef> Avatar </th>
       <td mat-cell *matCellDef="let character">
@@ -14,7 +21,7 @@
     </ng-container>
   
     <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef> Name <button mat-button>ABC</button> <button mat-button>DESC</button> <button mat-button>Default</button> </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header class="sort-arrow"> Name </th>
       <td mat-cell *matCellDef="let character">
         <a [routerLink]="['/character', character.id]">{{ character.name }}</a>
       </td>
@@ -22,8 +29,10 @@
   
     <ng-container matColumnDef="gender">
       <th mat-header-cell *matHeaderCellDef> Gender 
-        <div><input type="checkbox" checked/><mat-icon>male</mat-icon><input type="checkbox" checked/><mat-icon>female</mat-icon>
-            <input type="checkbox" checked/><mat-icon>do_not_disturb</mat-icon> <input type="checkbox" checked/><mat-icon>question_mark</mat-icon>
+        <div><mat-checkbox checked='true' (change)="onGenderCheckbox('Male')"/><mat-icon>male</mat-icon>
+          <mat-checkbox checked='true' (change)="onGenderCheckbox('Female')"/><mat-icon>female</mat-icon>
+          <mat-checkbox checked='true' (change)="onGenderCheckbox('Genderless')"/><mat-icon>do_not_disturb</mat-icon>
+          <mat-checkbox checked='true' (change)="onGenderCheckbox('Unknown')"/><mat-icon>question_mark</mat-icon>
     </div></th>
       <td mat-cell *matCellDef="let character">
         <mat-icon>{{ character.gender === 'Male' ? 'male' : character.gender === 'Female' ? 'female': character.gender === 'Genderless' ? 'do_not_disturb': 'question_mark'}}</mat-icon>
@@ -34,6 +43,6 @@
     <tr mat-row *matRowDef="let row; columns: ['avatar', 'name', 'gender'];"></tr>
   </table>
   
-  <div infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollUpDistance]="1.5" [infiniteScrollThrottle]="300" (scrolled)="onScroll()">
+  <div infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollUpDistance]="1.5" [infiniteScrollThrottle]="10" (scrolled)="onScroll()">
 </div>
   

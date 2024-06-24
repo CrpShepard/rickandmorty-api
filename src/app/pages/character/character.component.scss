@@ -1,0 +1,42 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+@import '@angular/material/prebuilt-themes/azure-blue.css';
+
+.container {
+    width: 100%;
+    backdrop-filter: blur(4px);
+    
+}
+
+h1 {
+    font-size: 72px;
+}
+
+.image-container {
+    float: left;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    margin: 20px;
+}
+
+.info-container {
+    background: radial-gradient(closest-side, rgba(251, 187, 151, 0.33) 10%, rgba(0,0,0,0.6) 90%);
+}
+
+
+p {
+    font-size: x-large;
+}
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+        flex: 1 0 21%;
+        margin: 10px;
+        box-sizing: border-box;
+    }
+}
